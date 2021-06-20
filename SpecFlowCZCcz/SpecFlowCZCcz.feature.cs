@@ -77,11 +77,20 @@ namespace SpecFlowCZCcz
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add item to cart")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void AddItemToCart()
+        [NUnit.Framework.TestCaseAttribute("smartphone", null)]
+        [NUnit.Framework.TestCaseAttribute("notebook", null)]
+        [NUnit.Framework.TestCaseAttribute("keyboard", null)]
+        public virtual void AddItemToCart(string findingproduct, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "mytag"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("findingproduct", findingproduct);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add item to cart", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 8
 this.ScenarioInitialize(scenarioInfo);
@@ -107,7 +116,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("that i am on the czc webpage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
- testRunner.Then("find search box to enter smartphone", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("find search box to enter {0}", findingproduct), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 11
  testRunner.Then("click search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
