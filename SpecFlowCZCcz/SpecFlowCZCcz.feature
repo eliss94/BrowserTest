@@ -7,11 +7,11 @@
 @mytag
 Scenario: Add item to cart 
 	Given that i am on the czc webpage
-	Then find search box to enter <findingproduct>
-	Then click search button
-	Then click first category
-	Then add first product to cart
-	And verify whether item is added to cart
+	When find search box to enter <findingproduct>
+	When click search button
+	When click first category
+	When add first product to cart
+	Then verify whether item is added to cart
 	Then close the browser instance
 
 	Examples: 

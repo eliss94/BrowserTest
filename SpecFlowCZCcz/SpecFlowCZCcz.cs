@@ -24,31 +24,31 @@ namespace SpecFlowCZCcz
             System.Threading.Thread.Sleep(2000);
         }
         
-        [Then(@"find search box to enter (.*)")]
-        public void ThenFindSearchBoxToEnterFindingProduct(string findingproduct)
+        [When(@"find search box to enter (.*)")]
+        public void WhenFindSearchBoxToEnterFindingProduct(string findingproduct)
         {
             IWebElement searchbox = driver.FindElement(By.Id("fulltext"));
             searchbox.SendKeys(findingproduct);
         }
         
-        [Then(@"click search button")]
-        public void ThenClickSearchButton()
+        [When(@"click search button")]
+        public void WhenClickSearchButton()
         {
             IWebElement searchButton = driver.FindElement(By.XPath("/html/body/div[2]/header/div[2]/div/div/div[1]/form/button"));
             searchButton.Click();
             System.Threading.Thread.Sleep(2000);
         }
         
-        [Then(@"click first category")]
-        public void ThenClickFirstCategory()
+        [When(@"click first category")]
+        public void WhenClickFirstCategory()
         {
             IWebElement firstCategory = driver.FindElement(By.XPath("/html/body/div[2]/div[3]/div[1]/div[2]/div/div[3]/a[1]/h3"));
             firstCategory.Click();
             System.Threading.Thread.Sleep(2000);
         }
         
-        [Then(@"add first product to cart")]
-        public void ThenAddFirstProductToCart()
+        [When(@"add first product to cart")]
+        public void WhenAddFirstProductToCart()
         {
             IWebElement addproduct = driver.FindElement(By.XPath("/html/body/div[2]/div[3]/div[1]/div[2]/div/div[5]/div[1]/div[2]/div[1]/h5/a"));
             product = addproduct.Text;
